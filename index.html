@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="node_modules/google-libphonenumber/dist/libphonenumber.js"></script>
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <main>
+
+      <!-- Sidebar start -->
+      <aside class="info">
+        <ol class="info-list">
+          <li class="info-list-item active">
+            <p class="info-list-item__step">Step 1</p>
+            <h3 class="info-list-item__title">Your info</h3>
+          </li>
+          <li class="info-list-item">
+            <p class="info-list-item__step">Step 2</p>
+            <h3 class="info-list-item__title">Select plan</h3>
+          </li>
+          <li class="info-list-item">
+            <p class="info-list-item__step">Step 3</p>
+            <h3 class="info-list-item__title">Add-ons</h3>
+          </li>
+          <li class="info-list-item">
+            <p class="info-list-item__step">Step 4</p>
+            <h3 class="info-list-item__title">Summary</h3>
+          </li>
+        </ol>
+      </aside>
+      <!-- Sidebar end -->
+
+      <div class="container">
+        <!-- Step 1 start -->
+        <section class="person-info">
+          <h2 class="person-info__title">Personal info</h2>
+          <p class="person-info__text">Please provide your name, email address, and phone number.</p>
+
+          <form class="person-info-form">
+            <div class="person-info-flex">
+              <label for="name" class="person-info-form__label">Name</label>
+              <p class="person-info-form__error">This field is required</p>
+            </div>
+            <input type="text" class="person-info-form__field" id="name" autofocus required aria-required="true" autocomplete="name" name="userName" placeholder="e.g. Stephen King">
+
+            <div class="person-info-flex">
+              <label for="email" class="person-info-form__label">Email address</label>
+              <p class="person-info-form__error">This field is required</p>
+            </div>
+            <input type="email" class="person-info-form__field" id="email" required aria-required="true" autocomplete="email" name="userEmail" placeholder="e.g. stephenking@lorem.com">
+
+            <div class="person-info-flex">
+              <label for="phone" class="person-info-form__label">Phone number</label>
+              <p class="person-info-form__error">This field is required</p>
+            </div>
+            <input type="text" class="person-info-form__field" id="phone" value="+" required aria-required="true" autocomplete="tel" name="userPhoneNumber" placeholder="e.g. +1 234 567 890">
+          </form>
+
+        </section>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+        <section class="select-plan">
+          <h2 class="select-plan__title">Select your plan</h2>
+          <p class="select-plan__text">You have the option of monthly or yearly billing.</p>
+
+          <form class="plan-option">
+            <div class="plan-option-flex">
+              <div class="plan-option-item">
+                <img src="assets/images/icon-arcade.svg" class="plan-option-item__img" alt="">
+
+                <div class="plan-option-caption">
+                  <h4 class="plan-option-caption__title">Arcade</h4>
+                  <small class="plan-option-caption__price">$9/mo</small>
+                  <small class="month-free-msg">2 months free</small>
+                </div>
+              </div>
+              <div class="plan-option-item">
+                <img src="assets/images/icon-advanced.svg" class="plan-option-item__img" alt="">
+
+                <div class="plan-option-caption">
+                  <h4 class="plan-option-caption__title">Advanced</h4>
+                  <small class="plan-option-caption__price">$12/mo</small>
+                  <small class="month-free-msg">2 months free</small>
+                </div>
+              </div>
+              <div class="plan-option-item">
+                <img src="assets/images/icon-pro.svg" class="plan-option-item__img" alt="">
+
+                <div class="plan-option-caption">
+                  <h4 class="plan-option-caption__title">Pro</h4>
+                  <small class="plan-option-caption__price">$15/mo</small>
+                  <small class="month-free-msg">2 months free</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-option-date">
+              <span class="plan-option-date__month plan-option-date__active">Monthly</span>
+              <label class="switch">
+                <input type="checkbox" class="switch__input">
+                <span class="slider round"></span>
+              </label>
+              <span class="plan-option-date__year">Yearly</span>
+
+            </div>
+          </form>
+        </section>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+        <section class="addons">
+          <h2 class="addons__title">Pick add-ons</h2>
+          <p class="addons__text">Add-ons help enhance your gaming experience.</p>
+
+          <form class="addons-option">
+            <div class="addons-option-item" id="contentOnlineService">
+              <label class="addons-check" for="onlineService">
+                <input type="checkbox" class="addons-check__checkbox" name="onlineService" id="onlineService">
+                <span class="addons-check__novo-checkbox"></span>
+              </label>
+              <div class="addons-option-info">
+                <h4 class="addons-option-info__title">Online service</h4>
+                <p class="addons-option-info__text">Access to multiplayer games</p>
+              </div>
+              <div class="addons-option-price">
+                <p class="addons-option-price__text">+$1/mo</p>
+              </div>
+            </div>
+            <div class="addons-option-item">
+              <label class="addons-check" for="large-storage">
+                <input type="checkbox" class="addons-check__checkbox" name="largerStorage" id="large-storage">
+                <span class="addons-check__novo-checkbox"></span>
+              </label>
+              <div class="addons-option-info">
+                <h4 class="addons-option-info__title">Larger storage</h4>
+                <p class="addons-option-info__text">Extra 1TB of cloud save</p>
+              </div>
+              <div class="addons-option-price">
+                <p class="addons-option-price__text">+$2/mo</p>
+              </div>
+            </div>
+            <div class="addons-option-item">
+              <label class="addons-check" for="customizable-profile">
+                <input type="checkbox" class="addons-check__checkbox" name="customizableProfile" id="customizable-profile">
+                <span class="addons-check__novo-checkbox"></span>
+              </label>
+              <div class="addons-option-info">
+                <h4 class="addons-option-info__title">Customizable Profile</h4>
+                <p class="addons-option-info__text">Custom theme on your profile</p>
+              </div>
+              <div class="addons-option-price">
+                <p class="addons-option-price__text">+$2/mo</p>
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <section class="confirm-section">
+          <h2 class="confirm-section__title">Finishing up</h2>
+          <p class="confirm-section__text">Double-check everything looks OK before confirming.</p>
+
+          <!-- Dynamically add subscription and add-on selections here -->
+          <div class="confirm-container">
+            <div class="confirm-plan-and-price">
+              <div class="confirm-plan">
+                <h4 class="confirm-plan__title">Arcade &#40;Monthly&#41;</h4>
+                <a href="#" class="confirm-plan__change">Change</a>
+              </div>
+              <div class="confirm-price">
+                <b class="confirm-price__value">$9/mo</b>
+              </div>
+            </div>
+            <hr class="vr-addon">
+          </div>
+
+          <div class="confirm-total">
+            <h5 class="confirm-total__title">Total &#40;per month&#41;</h5>
+
+            <strong class="confirm-total__price">+$12/mo</strong>
+          </div>
+        </section>
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <section class="thanks-section">
+          <img src="assets/images/icon-thank-you.svg" class="thanks-section__img" alt="">
+
+          <h2 class="thanks-section__title">Thank you!</h2>
+
+          <p class="thanks-section__text">Thanks for confirming your subscription!<br class="hide-desktop"> We hope you have fun
+        using our platform. If you ever need support, please feel free
+        to email us at support@loremgaming.com.</p>
+        </section>
+        <!-- Step 5 end -->
+
+        <div class="btn-group">
+          <button type="button" class="btn-group__back btn-group-none">Go Back</button>
+          <button type="button" class="btn-group__next">Next Step</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="attribution attribution-absolute">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Adriano</a>.
+    </footer>
+  </body>
+</html>
