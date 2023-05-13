@@ -35,9 +35,6 @@ hr {
     --white: hsl(0, 0%, 100%);
 }
 
-.container {
-}
-
 /* Sidebar start */
 .info {
     background: url("../../assets/images/bg-sidebar-mobile.svg") 0 0 / cover no-repeat;
