@@ -568,7 +568,7 @@ $(() => {
       setTimeout(() => {$elmMsgInfoErro.eq(2).removeClass("effect_error")}, 800);
 
       // Atualize o texto informando o respectivo erro
-      $elmMsgInfoErro.eq(2).text("Enter the email field correctly.");
+      $elmMsgInfoErro.eq(2).text("Enter the phone field correctly.");
 
       // Adiciona uma borda vermelha ao campo de nome e
       // seu foco também será da cor vermelha
