@@ -284,14 +284,14 @@ $(() => {
           return oldContent.replace("/mo", "0/yr");
         });
       })
-      
-      $precoTotal.text((i,oldContent) => {
-        return oldContent.replace("+", "");
-      });
-      
+
       $precoTotal.text((i,oldContent) => {
         return oldContent.replace("/mo", "/yr");
-      });
+      })
+
+      $precoTotal.text((i,oldContent) => {
+        return oldContent.replace("+", "");
+      })
 
       // Destaca o texto de "yearly" no switch
       $textoInfoAnoNoSwitch.addClass("plan-option-date__active");
@@ -328,12 +328,16 @@ $(() => {
           return oldContent.replace("0/yr", "/mo");
         });
       })
-      
-      $precoTotal.text().split("").unshift("+").join("");
-      
+
       $precoTotal.text((i,oldContent) => {
         return oldContent.replace("/yr", "/mo");
-      });
+      })
+
+      $precoTotal.text((i,oldContent) => {
+        let textoAlterado = oldContent.split("");
+        textoAlterado.unshift("+");
+        return textoAlterado.join("");
+      })
 
       // Destaca o texto de "monthly" no switch
       $textoInfoMesNoSwitch.addClass("plan-option-date__active");
@@ -499,8 +503,6 @@ $(() => {
           })
           return oldContent.replace(/[0-9]+/g, soma);
         })
-
-        console.log($precoPlanoConfirma.text());
       } else {
         // Se não retorna o padrão
         $btnProximo.removeClass("btn-group__next--confirm");
@@ -582,7 +584,7 @@ $(() => {
       setTimeout(() => {$elmMsgInfoErro.eq(2).removeClass("effect_error")}, 800);
 
       // Atualize o texto informando o respectivo erro
-      $elmMsgInfoErro.eq(2).text("Enter the phone field correctly.");
+      $elmMsgInfoErro.eq(2).text("Enter the email field correctly.");
 
       // Adiciona uma borda vermelha ao campo de nome e
       // seu foco também será da cor vermelha
