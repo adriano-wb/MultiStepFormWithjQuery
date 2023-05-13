@@ -49,11 +49,7 @@ $(() => {
   // Botões de próximo, anterior e recipiente dos botões
   const $elmRecipienteBtn = $(".btn-group");
   const $btnProximo = $(".btn-group__next");
-  const $btnAnterior = $(".btn-group__back");
-
-  // Soma total recipiente
-  let somaTotal = 9;
-  let addons = 0;
+  const $btnAnterior = $(".btn-group__back"):
 
   // Esconder linha horizontal na confirmação
   $(".vr-addon").hide();
