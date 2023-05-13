@@ -400,8 +400,8 @@ input:checked + .slider:before {
 .addons-check__checkbox:checked + .addons-check__novo-checkbox:before {
     content: url(../../assets/images/icon-checkmark.svg);
     position: absolute;
-    transform: translateX(0.020rem);
-    left: 2.3px;
+    transform: translateX(0.03em);
+    left: 2.4px;
     top: -2px;
 }
 
@@ -807,17 +807,13 @@ input:checked + .slider:before {
         top: 0;
         width: 23px;
         margin-left: 3px;
+        height: 20px;
+        width: 20px;
     }
 
     .addons-check__checkbox:checked + .addons-check__novo-checkbox:before {
-        left: 3.5px;
-        transform: translateX(0.010rem);
-        top: -1.5px;
-    }
-
-    .addons-check__novo-checkbox {
-        height: 20px;
-        width: 20px;
+        padding-left: 3px;
+        transform: translate(-0.1em, 0.05rem);
     }
 
     .addons-option-price__text {
