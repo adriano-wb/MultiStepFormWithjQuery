@@ -284,6 +284,14 @@ $(() => {
           return oldContent.replace("/mo", "0/yr");
         });
       })
+      
+      $precoTotal.text((i,oldContent) => {
+        return oldContent.replace("+", "");
+      });
+      
+      $precoTotal.text((i,oldContent) => {
+        return oldContent.replace("/mo", "/yr");
+      });
 
       // Destaca o texto de "yearly" no switch
       $textoInfoAnoNoSwitch.addClass("plan-option-date__active");
@@ -320,6 +328,12 @@ $(() => {
           return oldContent.replace("0/yr", "/mo");
         });
       })
+      
+      $precoTotal.text().split("").unshift("+").join("");
+      
+      $precoTotal.text((i,oldContent) => {
+        return oldContent.replace("/yr", "/mo");
+      });
 
       // Destaca o texto de "monthly" no switch
       $textoInfoMesNoSwitch.addClass("plan-option-date__active");
