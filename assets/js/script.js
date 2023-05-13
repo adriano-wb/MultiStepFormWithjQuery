@@ -298,6 +298,10 @@ $(() => {
 
       // Remove destaque do mes no switch
       $textoInfoMesNoSwitch.removeClass("plan-option-date__active");
+
+      $titleInfoTotal.text((i,oldContent) => {
+        return oldContent.replace("per month", "per year");
+      })
     } else {
       $(this).attr("checked", false);
       $(".month-free-msg").slideUp("fast");
@@ -344,6 +348,10 @@ $(() => {
 
       // Remvoe destaque do ano no switch
       $textoInfoAnoNoSwitch.removeClass("plan-option-date__active");
+
+      $titleInfoTotal.text((i,oldContent) => {
+        return oldContent.replace("per year", "per month");
+      })
     }
   }
 
@@ -584,7 +592,7 @@ $(() => {
       setTimeout(() => {$elmMsgInfoErro.eq(2).removeClass("effect_error")}, 800);
 
       // Atualize o texto informando o respectivo erro
-      $elmMsgInfoErro.eq(2).text("Enter the phone field correctly.");
+      $elmMsgInfoErro.eq(2).text("Enter the email field correctly.");
 
       // Adiciona uma borda vermelha ao campo de nome e
       // seu foco também será da cor vermelha
